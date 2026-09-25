@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 
 const express = require("express");
@@ -27,7 +28,10 @@ if (!MONGO_URI) {
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://taskflow-frontend-u3q3.onrender.com",
+    ],
     credentials: true,
   })
 );
@@ -98,8 +102,8 @@ const startServer = async () => {
     console.log("================================");
     console.log("🚀 TaskFlow Backend");
     console.log("================================");
-    console.log(`🌐 Server: http://localhost:${PORT}`);
-    console.log(`📡 API: http://localhost:${PORT}/api`);
+    console.log(`🌐 Server running on port ${PORT}`);
+    console.log(`📡 API: /api`);
     console.log("================================");
     console.log("");
   });
