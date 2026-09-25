@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext(null);
 
-const API_URL = "http://localhost:5050/api";
+const API_URL = "https://taskflow-backend-407c.onrender.com/api";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
